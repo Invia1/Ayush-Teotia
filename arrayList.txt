@@ -1,0 +1,105 @@
+using System;
+using System.Collections.Generic;
+
+class PersonDetails
+{
+    List<string> obj1 = new List<string>()
+    {
+        "ayush",
+        "john",
+        "paul"
+    };
+    public void AddData()
+    {
+        Console.WriteLine("Enter the data which you want to add in the list:");
+        obj1.Add(Console.ReadLine());
+        Console.WriteLine("the list Contains follwoing names:");
+        foreach (var ele in obj1)
+        {
+            Console.WriteLine(ele);
+        }
+    }
+    public void InsertData()
+    {
+        Console.WriteLine("Enter the data which you want to insert:");
+        obj1.Insert(1, Console.ReadLine());
+        Console.WriteLine("the list Contains follwoing names:");
+        foreach (var temp in obj1)
+        {
+            Console.WriteLine(temp);
+        }
+    }
+    public void RemoveData()
+    {
+        Console.WriteLine("Enter the name which you want to remove.");
+        obj1.Remove(Console.ReadLine());
+        Console.WriteLine("the list Contains follwoing names:");
+        foreach (var rm in obj1)
+        {
+            Console.WriteLine(rm);
+        }
+    }
+    public void UpdateData()
+    {
+        Console.WriteLine("At which position you want to update a value:");
+        int num = int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter a name which you want to replace");
+        string str = Console.ReadLine();
+        obj1[num] = str;
+        Console.WriteLine("the list Contains follwoing names:");
+        foreach (var tet in obj1)
+        {
+
+            Console.WriteLine(tet);
+        }
+    }
+    public void SearchData()  
+    {
+        Console.WriteLine("The search data are:");
+        bool trueFalse = obj1.Contains(Console.ReadLine());
+        Console.WriteLine(trueFalse);
+    }
+}
+class Person
+{
+ public static void Main()
+    {
+        var obj2=new PersonDetails();
+        Console.WriteLine("Type-1: To Add the data.");
+        Console.WriteLine("Type-2: To insert the data.");
+        Console.WriteLine("Type-3: To remove the data.");
+        Console.WriteLine("Type-4: To update the data.");
+        Console.WriteLine("Typw-5: To search the data.");
+        Console.WriteLine("Please enter the type:");
+        int x=int.Parse(Console.ReadLine());
+        
+        switch (x)
+        {
+          case 1:
+                {
+                    obj2.AddData();
+                    break;
+                }
+                case 2:
+                {
+                    obj2.InsertData();
+                    break;
+                } 
+                 case 3:
+                {
+                    obj2.RemoveData();
+                    break;
+                }
+                case 4:
+                {
+                    obj2.UpdateData();  
+                    break;
+                }
+            case 5:
+                {
+                    obj2.SearchData();
+                    break;
+                }
+        } 
+    }
+}
